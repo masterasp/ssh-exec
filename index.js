@@ -59,7 +59,8 @@ var exec = function (cmd, opts, cb) {
             privateKey: key,
             agent: process.env.SSH_AUTH_SOCK,
             hostHash: 'md5',
-            hostVerifier: verifier
+            hostVerifier: verifier,
+            readyTimeout: opts.readyTimeout || 20000
         })
     };
 
